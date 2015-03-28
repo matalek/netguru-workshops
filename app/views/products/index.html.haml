@@ -1,6 +1,6 @@
 %h1 Listing products
 
-%table
+%table.table{:class => 'table-hover'}
   %tr
     %th Title
     %th Description
@@ -14,10 +14,23 @@
       %td= product.title
       %td= product.description
       %td= product.price
-      %td= link_to 'Show', category_product_path(product.category, product)
-      %td= link_to 'Edit', edit_category_product_path(product.category, product)
-      %td= link_to 'Destroy', category_product_path(product.category, product), method: :delete, data: { confirm: 'Are you sure?' }
-
+      %td
+        .text-center
+          %a{:href => category_product_path(product.category, product), :class => 'btn btn-default'}
+            Show&nbsp
+            %span{:class => 'glyphicon glyphicon-search'}
+      %td
+        .text-center
+          %a{:href => edit_category_product_path(product.category, product), :class => 'btn btn-default'}
+            Edit&nbsp
+            %span{:class => 'glyphicon glyphicon-edit'}
+      %td
+        .text-center
+          %a{:href => category_product_path(product.category, product), :class => 'btn btn-default',  :data => {:method => :delete, :confirm => 'Are you sure?' }}
+            Destroy&nbsp
+            %span{:class => 'glyphicon glyphicon-trash'}
 %br
 
-= link_to 'Back', category_path(category), class: 'btn btn-primary'
+%a{:href => category_path(category), :class => 'btn btn-primary'}
+  Back&nbsp
+  %span{:class => 'glyphicon glyphicon-arrow-left'}

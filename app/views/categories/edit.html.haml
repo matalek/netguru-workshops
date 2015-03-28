@@ -2,6 +2,10 @@
 
 = render 'form'
 
-= link_to 'Show', category
-\|
-= link_to 'Back', categories_path, class: 'btn btn-primary'
+%a{:href => category, :class => 'btn btn-primary'}
+  Show&nbsp
+  %span{:class => 'glyphicon glyphicon-search'}
+
+%a{:href => categories_path, :class => 'btn btn-primary'}
+  Back&nbsp
+  %span{:class => 'glyphicon glyphicon-arrow-left'}

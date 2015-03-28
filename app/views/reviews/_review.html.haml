@@ -1,4 +1,13 @@
-%p= review.content
-%p
-  %b= review.rating
-  %em= review.author
+.panel.panel-info
+  .panel-heading
+    %em= review.author
+  .panel-body
+    .row
+      .col-lg-1
+        .text-center
+          %h4
+            .label.label-default
+              =review.rating
+      .col-lg-11
+        =review.content
+

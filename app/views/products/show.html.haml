@@ -1,4 +1,4 @@
-%p#notice= notice
+%p#notice.bg-info= notice
 %p#error= flash[:error]
 
 %p
@@ -18,8 +18,15 @@
 %h3 Reviews
 = render 'reviews/form'
 
+%br
+
 = render reviews
 
-= link_to 'Edit', edit_category_product_path(category.id, product.id)
-\|
-= link_to 'Back', category_products_path, class: 'btn btn-primary'
+
+%a{:href => edit_category_product_path(category.id, product.id), :class => 'btn btn-primary'}
+  Edit&nbsp
+  %span{:class => 'glyphicon glyphicon-edit'}
+
+%a{:href => category_products_path, :class => 'btn btn-primary'}
+  Back&nbsp
+  %span{:class => 'glyphicon glyphicon-arrow-left'}

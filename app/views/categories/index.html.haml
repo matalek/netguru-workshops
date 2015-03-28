@@ -12,10 +12,22 @@
       - categories.each do |category|
         %tr
           %td= category.name
-          %td= link_to 'Show', category
+          %td
+            .text-center
+              %a{:href => category_path(category), :class => 'btn btn-default'}
+                Show&nbsp
+                %span{:class => 'glyphicon glyphicon-search'}
           -if current_user.admin?
-            %td= link_to 'Edit', edit_category_path(category)
-          %td= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' }
+            %td
+              .text-center
+                %a{:href => edit_category_path(category), :class => 'btn btn-default'}
+                  Edit&nbsp
+                  %span{:class => 'glyphicon glyphicon-edit'}
+          %td
+            .text-center
+              %a{:href => category_path(category), :class => 'btn btn-default',  :data => {:method => :delete, :confirm => 'Are you sure?' }}
+                Destroy&nbsp
+                %span{:class => 'glyphicon glyphicon-trash'}
 
 %br
 

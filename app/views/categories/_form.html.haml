@@ -11,4 +11,6 @@
     = f.label :name
     = f.text_field :name, class: 'form-control'
 
-  = f.submit 'Save', class: 'btn btn-default'
+  %button{:class => 'btn btn-default', :type => 'submit', :name => 'commit'}
+    Save&nbsp
+    %span{:class => 'glyphicon glyphicon-floppy-disk'}
