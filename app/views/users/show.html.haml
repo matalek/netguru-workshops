@@ -1,0 +1,50 @@
+.panel.panel-primary
+  .panel-heading
+    .h2
+      = @user.firstname + ' ' + @user.lastname
+  .panel-body
+    .row
+      .col-md-3
+      .col-md-6
+        %table.table{:class =>'table-user-information'}
+          %tbody
+            %tr
+              %td
+                .title First name:
+              %td
+                = @user.firstname
+            %tr
+              %td
+                .title Last name:
+              %td
+                = @user.lastname
+            %tr
+              %td
+                .title Email:
+              %td
+                = @user.email
+            %tr
+              %td
+                .title Administrator authority:
+              %td
+                = @admin
+            %tr
+              %td
+                .title Date of registration:
+              %td
+                = @user.created_at.strftime('%d-%m-%y')
+            %tr
+              %td
+                .title Number of logons:
+              %td
+                = @user.sign_in_count
+            %tr
+              %td
+                .title Date of last logon:
+              %td
+                = @user.last_sign_in_at.strftime('%d-%m-%y')
+    %hr
+    .h4
+      Recently added reviews:
+    - @reviews.each do |r|
+      = render r.decorate

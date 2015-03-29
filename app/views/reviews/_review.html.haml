@@ -6,8 +6,19 @@
       .col-sm-1
         .text-center
           %h4
-            .label.label-default
-              =review.rating
+            - if review.rating === 1
+              .label.label-danger
+                = review.rating
+            - else
+              - if review.rating == 5
+                .label.label-success
+                  = review.rating
+              - else
+                .label.label-warning
+                  = review.rating
       .col-sm-11
-        =review.content
+        = review.content
+  .panel-footer
+    Created at:
+    = review.created_at.strftime('%d-%m-%y')
 
