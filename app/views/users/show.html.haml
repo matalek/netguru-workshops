@@ -38,12 +38,16 @@
                 .title Number of logons:
               %td
                 = @user.sign_in_count
-            %tr
-              %td
-                .title Date of last logon:
-              %td
-                = @user.last_sign_in_at.strftime('%d-%m-%y')
+            - if @user.sign_in_count > 0
+              %tr
+                %td
+                  .title Date of last logon:
+                %td
+                  = @user.last_sign_in_at.strftime('%d-%m-%y')
 .h4
   Recently added reviews:
-- @reviews.each do |r|
-  = render r.decorate
+- if @none_reviews
+  This user has not added any reviews yet.
+- else
+  - @reviews.each do |r|
+    = render r.decorate
