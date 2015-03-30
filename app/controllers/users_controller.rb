@@ -7,5 +7,6 @@ class UsersController < ApplicationController
       @admin = 'No'
     end
     @reviews = @user.reviews.order(created_at: :desc).first(5)
+    @display_product = true
   end
 end

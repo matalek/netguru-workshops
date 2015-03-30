@@ -1,6 +1,9 @@
 .panel.panel-info
   .panel-heading
-    %em= review.author
+    - if @display_product
+      %em= link_to review.product.title, category_product_path(review.product.category, review.product)
+    -else
+      %em= link_to review.author, review.user
   .panel-body
     .row
       .col-sm-1
@@ -22,3 +25,5 @@
     Created at:
     = review.created_at.strftime('%d-%m-%y')
 
+- if @display_user
+  Tak
