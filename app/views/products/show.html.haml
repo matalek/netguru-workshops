@@ -1,19 +1,36 @@
 %p#notice.bg-info= notice
 %p#error= flash[:error]
 
-%p
-  %b Title:
-  = product.title
-%p
-  %b Description:
-  = product.description
-%p
-  %b Price:
-  = product.price
-
-%p
-  %b Category
-  = product.category.name
+.panel.panel-primary
+  .panel-heading
+    .h2
+      = product.title
+  .panel-body
+    .row
+      .col-md-1
+      .col-md-10
+        %table.table{:class =>'table-information'}
+          %tbody
+            %tr
+              %td
+                .title Title:
+              %td
+                = product.title
+            %tr
+              %td
+                .title Description:
+              %td
+                = product.description
+            %tr
+              %td
+                .title Price:
+              %td
+                = product.price
+            %tr
+              %td
+                .title Category:
+              %td
+                = product.category.name
 
 %h3 Reviews
 = render 'reviews/form'

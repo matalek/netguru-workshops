@@ -6,7 +6,7 @@
     .row
       .col-md-3
       .col-md-6
-        %table.table{:class =>'table-user-information'}
+        %table.table{:class =>'table-information'}
           %tbody
             %tr
               %td
@@ -43,8 +43,7 @@
                 .title Date of last logon:
               %td
                 = @user.last_sign_in_at.strftime('%d-%m-%y')
-    %hr
-    .h4
-      Recently added reviews:
-    - @reviews.each do |r|
-      = render r.decorate
+.h4
+  Recently added reviews:
+- @reviews.each do |r|
+  = render r.decorate

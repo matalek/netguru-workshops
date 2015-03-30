@@ -16,3 +16,23 @@ body {
 h1 {
   color: midnightblue;
 }
+
+/* Tables with informations */
+
+.title {
+  color: darkred;
+  font-weight: bold;
+  display: inline;
+}
+
+.table-information > tbody > tr {
+  border-top: 1px solid rgb(221, 221, 221);
+}
+
+.table-information > tbody > tr:first-child {
+  border-top: 0;
+}
+
+.table-information > tbody > tr > td {
+  border-top: 0;
+}

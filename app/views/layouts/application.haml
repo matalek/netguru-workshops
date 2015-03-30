@@ -16,6 +16,8 @@
         %ul.nav.navbar-nav.navbar-right
           - if current_user
             %li
+              = link_to 'Home', root_path
+            %li
               = link_to 'My profile', current_user
             %li
               = link_to 'Log out', destroy_user_session_path, method: 'delete'
