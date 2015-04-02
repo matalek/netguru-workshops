@@ -34,9 +34,15 @@
             %li
               = link_to 'Sign up', new_user_registration_path
 
+
     .container-fluid
       .row
         .col-md-3
         .col-md-6
+          - if flash.notice
+            .alert{:class => "alert-info"}
+              %a{:href => "#", 'data-dismiss' => "alert", :class =>"close"}
+                &times
+              = flash.notice
           = yield
         .col-md-3
