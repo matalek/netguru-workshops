@@ -8,7 +8,7 @@ gem 'decent_exposure'
 gem 'decent_decoration'
 gem 'devise'
 gem 'simple_form', '~> 3.1.0rc'
-gem 'bootstrap-sass', '~> 3.1.0'
+gem 'bootstrap-sass', '~> 3.3.4'
 gem 'haml-rails'
 gem 'sass-rails', github: 'rails/sass-rails'
 gem 'coffee-rails'
@@ -19,6 +19,7 @@ gem 'therubyracer', platforms: :ruby
 gem 'travis'
 gem 'ffaker'
 gem 'konf'
+gem 'bootswatch-rails'
 
 group :development do
   gem 'spring'

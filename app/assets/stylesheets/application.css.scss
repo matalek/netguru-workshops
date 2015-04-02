@@ -6,10 +6,19 @@
  *= require_tree .
 */
 
+
+
+@import "bootstrap-sprockets";
+
+@import "bootswatch/united/variables";
+
 @import "bootstrap";
 
+@import "bootswatch/united/bootswatch";
+
+
 body {
-  background-image: url(geometry2.png);
+  background-image: url(nice_snow.png);
   background-repeat: repeat;
   margin-bottom: 20px;
 }
