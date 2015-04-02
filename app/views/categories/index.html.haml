@@ -23,11 +23,11 @@
                 %a{:href => edit_category_path(category), :class => 'btn btn-default'}
                   Edit&nbsp
                   %span{:class => 'glyphicon glyphicon-edit'}
-          %td
-            .text-center
-              %a{:href => category_path(category), :class => 'btn btn-default',  :data => {:method => :delete, :confirm => 'Are you sure?' }}
-                Destroy&nbsp
-                %span{:class => 'glyphicon glyphicon-trash'}
+            %td
+              .text-center
+                %a{:href => category_path(category), :class => 'btn btn-default',  :data => {:method => :delete, :confirm => 'Are you sure?' }}
+                  Destroy&nbsp
+                  %span{:class => 'glyphicon glyphicon-trash'}
 
 - if current_user && current_user.admin
   .text-center
