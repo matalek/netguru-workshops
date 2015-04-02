@@ -31,3 +31,7 @@ local.local.*
 
 # Ignore Rubymine files
 /.idea
+
+# Ignore local environment variables
+.env
+Procfile
