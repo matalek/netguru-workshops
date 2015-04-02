@@ -1,7 +1,14 @@
 %h1 Editing product
 
-= render 'form'
+.panel.panel-default
+  .panel-body
+    = render 'form'
 
-= link_to 'Show', category_product_path(category, product)
-\|
-= link_to 'Back', category_path(category)
+.text-center
+  %a{:href => category_product_path(category, product), :class => 'btn btn-primary'}
+    Show&nbsp
+    %span{:class => 'glyphicon glyphicon-search'}
+
+  %a{:href => category_path(category), :class => 'btn btn-primary'}
+    Back&nbsp
+    %span{:class => 'glyphicon glyphicon-arrow-left'}

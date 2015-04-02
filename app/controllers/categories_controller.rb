@@ -10,6 +10,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    @products = category.products.order(created_at: :desc).first(5)
   end
 
   def new

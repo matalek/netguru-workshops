@@ -1,11 +1,14 @@
 %h1 Editing category
 
-= render 'form'
+.panel.panel-default
+  .panel-body
+    = render 'form'
 
-%a{:href => category, :class => 'btn btn-primary'}
-  Show&nbsp
-  %span{:class => 'glyphicon glyphicon-search'}
+.text-center
+  %a{:href => category_path, :class => 'btn btn-primary'}
+    Show&nbsp
+    %span{:class => 'glyphicon glyphicon-search'}
 
-%a{:href => categories_path, :class => 'btn btn-primary'}
-  Back&nbsp
-  %span{:class => 'glyphicon glyphicon-arrow-left'}
+  %a{:href => categories_path, :class => 'btn btn-primary'}
+    Back&nbsp
+    %span{:class => 'glyphicon glyphicon-arrow-left'}

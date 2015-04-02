@@ -1,7 +1,10 @@
 %h1 New category
 
-= render 'form'
+.panel.panel-default
+  .panel-body
+    = render 'form'
 
-%br
-
-= link_to 'Back', categories_path, class: 'btn btn-primary'
+.text-center
+  %a{:href => categories_path, :class => 'btn btn-primary'}
+    Back&nbsp
+    %span{:class => 'glyphicon glyphicon-arrow-left'}

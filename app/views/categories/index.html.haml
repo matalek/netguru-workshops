@@ -29,9 +29,8 @@
                 Destroy&nbsp
                 %span{:class => 'glyphicon glyphicon-trash'}
 
-%br
-
 - if current_user && current_user.admin
-  .row
-    .text-center
-      = link_to 'New category', new_category_path, class:"btn btn-primary btn-lg"
+  .text-center
+    %a{:href => new_category_path, :class => 'btn btn-primary'}
+      New category&nbsp
+      %span{:class => 'glyphicon glyphicon-new-window'}
