@@ -44,5 +44,10 @@
               %a{:href => "#", 'data-dismiss' => "alert", :class =>"close"}
                 &times
               = flash.notice
+          - if flash[:error]
+            .alert{:class => "alert-danger"}
+              %a{:href => "#", 'data-dismiss' => "alert", :class =>"close"}
+                &times
+              = flash[:error]
           = yield
         .col-md-3
