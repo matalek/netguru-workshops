@@ -37,9 +37,12 @@
       %h4 New review
     .panel-body
       = render 'reviews/form'
-
 %br
-= render reviews
+
+- if @none_reviews
+  There are no reviews yet.
+- else
+  = render reviews
 
 .text-center
   - if current_user == product.user

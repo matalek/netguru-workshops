@@ -12,6 +12,9 @@ class ProductsController < ApplicationController
   end
 
   def show
+    if !product.reviews.any?
+      @none_reviews = true
+    end
   end
 
   def new
