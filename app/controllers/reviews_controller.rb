@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :destroy]
+  before_action :ensure_owner!, only: [:edit, :destroy]
 
   expose(:category)
   expose(:review)
@@ -28,5 +30,13 @@ class ReviewsController < ApplicationController
   private
     def review_params
       params.require(:review).permit(:content, :rating, :product_id)
+    end
+
+    def ensure_owner!
+      unless self.product.review.user == current_user
+        flash[:error] = 'You are not allowed to edit this review.'
+        redirect_to category_product_url(category, product)
+        return false
+      end
     end
 end
