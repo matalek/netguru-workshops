@@ -31,19 +31,21 @@
 
 %h3 Reviews
 
-.panel.panel-default
-  .panel-heading
-    %h4 New review
-  .panel-body
-    = render 'reviews/form'
+- if current_user
+  .panel.panel-default
+    .panel-heading
+      %h4 New review
+    .panel-body
+      = render 'reviews/form'
 
 %br
 = render reviews
 
 .text-center
-  %a{:href => edit_category_product_path(category.id, product.id), :class => 'btn btn-primary'}
-    Edit&nbsp
-    %span{:class => 'glyphicon glyphicon-edit'}
+  - if current_user == product.user
+    %a{:href => edit_category_product_path(category.id, product.id), :class => 'btn btn-primary'}
+      Edit&nbsp
+      %span{:class => 'glyphicon glyphicon-edit'}
 
   %a{:href => category_products_path, :class => 'btn btn-primary'}
     Back&nbsp

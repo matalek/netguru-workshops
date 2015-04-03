@@ -8,26 +8,25 @@
       %th
       %th
   %tbody
-    -if current_user
-      - categories.each do |category|
-        %tr
-          %td= category.name
+    - categories.each do |category|
+      %tr
+        %td= category.name
+        %td
+          .text-center
+            %a{:href => category_path(category), :class => 'btn btn-default'}
+              Show&nbsp
+              %span{:class => 'glyphicon glyphicon-search'}
+        -if current_user && current_user.admin?
           %td
             .text-center
-              %a{:href => category_path(category), :class => 'btn btn-default'}
-                Show&nbsp
-                %span{:class => 'glyphicon glyphicon-search'}
-          -if current_user.admin?
-            %td
-              .text-center
-                %a{:href => edit_category_path(category), :class => 'btn btn-default'}
-                  Edit&nbsp
-                  %span{:class => 'glyphicon glyphicon-edit'}
-            %td
-              .text-center
-                %a{:href => category_path(category), :class => 'btn btn-default',  :data => {:method => :delete, :confirm => 'Are you sure?' }}
-                  Destroy&nbsp
-                  %span{:class => 'glyphicon glyphicon-trash'}
+              %a{:href => edit_category_path(category), :class => 'btn btn-default'}
+                Edit&nbsp
+                %span{:class => 'glyphicon glyphicon-edit'}
+          %td
+            .text-center
+              %a{:href => category_path(category), :class => 'btn btn-default',  :data => {:method => :delete, :confirm => 'Are you sure?' }}
+                Destroy&nbsp
+                %span{:class => 'glyphicon glyphicon-trash'}
 
 - if current_user && current_user.admin
   .text-center

@@ -15,17 +15,19 @@
       View all products&nbsp
       %span{:class => 'glyphicon glyphicon-list'}
 
-.panel.panel-default
-  .panel-heading
-    %h4
-      New product
-  .panel-body
-    = render 'products/form'
+- if current_user
+  .panel.panel-default
+    .panel-heading
+      %h4
+        New product
+    .panel-body
+      = render 'products/form'
 
 .text-center
-  %a{:href => edit_category_path(category), :class => 'btn btn-primary'}
-    Edit&nbsp
-    %span{:class => 'glyphicon glyphicon-edit'}
+  - if current_user && current_user.admin
+    %a{:href => edit_category_path(category), :class => 'btn btn-primary'}
+      Edit&nbsp
+      %span{:class => 'glyphicon glyphicon-edit'}
 
   %a{:href => categories_path, :class => 'btn btn-primary'}
     Back&nbsp
