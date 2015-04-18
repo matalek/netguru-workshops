@@ -18,7 +18,7 @@ This app is an improved version of the training application created by Netguru: 
 
 1. Password recovery system for app working on localhost has been enabled (not yet on Heroku due to security reasons).
 
-2. Review display has been enhanced.
+2. Review and product display has been enhanced.
 
 3. Some further authentications, not specified, but reasonable, have been added.
 
