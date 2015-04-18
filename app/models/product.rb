@@ -15,7 +15,11 @@ class Product < ActiveRecord::Base
     self.reviews.each do |r|
       sum += r.rating
     end
-    return sum / self.reviews.count
+    if self.reviews.count == 0
+      return 0.0
+    else
+      return sum / self.reviews.count
+    end
   end
 
 end

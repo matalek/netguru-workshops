@@ -28,6 +28,11 @@
                 .title Category:
               %td
                 = product.category.name
+            - if product.reviews.count > 0
+              %td
+                .title Average rating:
+              %td
+                = '%.2f' % product.average_rating
 
 %h3 Reviews
 
